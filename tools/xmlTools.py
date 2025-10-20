@@ -466,8 +466,8 @@ class XmlNameModify:
 if __name__ == '__main__':
 
     ## For xml  dataset
-    dataset_path = r'/home/lhf/DataSets/mnt_datasets/UAV_AG_all/365_AG/' #data_1_365
-    data_labels  = r'/home/lhf/DataSets/mnt_datasets/UAV_AG_all/365_AG/ImageSet/labels'
+    dataset_path = r'/home/data/2915' #data_1_365
+    data_labels  = r'/home/data/2915/labels'
     
     ### ========> Step 1. 分析数据集情况 获取类别分类(按照从数量多到少的顺序)
     label_summarizer = XMLLabelSummarizer(dataset_path)
@@ -481,14 +481,14 @@ if __name__ == '__main__':
 
     ### ========> Step 2. xml 转换为 txt
     # ['chariot', 'car', 'person', 'truck', 'tank', 'plane']
-    new_class_list = ['J-vehicle','M-vehicle','person','plane']
+    new_class_list = ['bus','truck','car','others_vehicle']
     class_map_dist = {
-        'chariot'   :'J-vehicle',
-        'car'       :'M-vehicle',
-        'person'    :'person',
-        'truck'     :'M-vehicle',
-        'tank'      :'J-vehicle',
-        'plane'     :'plane'
+        'bus'       :'bus',
+        'truck'     :'truck',
+        'car'    :'car',
+        'others_vehicle'     :'others_vehicle',
+        # 'tank'      :'J-vehicle',
+        # 'plane'     :'plane'
     }
     label_convert = XMLtoTXTConverter(input_dir=dataset_path,out_dir=data_labels,class_list=new_class_list,class_map_dist=class_map_dist)
     # label_convert.convert()
