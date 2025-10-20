@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'D:\Github\ML_IRSOD\3rdparty\ultralytics_Pro')
+sys.path.append(r'../3rdparty/ultralytics')  # add ultralytics repo to path
 
 
 # update ultralytics settinngs
